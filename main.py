@@ -15,7 +15,6 @@ chat_id = "YOUR_CHAT_ID"
 db_token = "YOUR_DROPBOX_TOKEN"
 
 
-
 def send_command(msg):
     url = f"https://api.telegram.org/bot{bot_id}/sendmessage?chat_id={chat_id}&text={msg}"
     req = requests.get(url)
