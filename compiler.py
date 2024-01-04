@@ -30,7 +30,7 @@ def compile_file():
 
 # Create the GUI
 root = tk.Tk()
-root.title("Python File Editor")
+root.title("T3L3R4T Compiler")
 root.geometry("400x300")
 root.configure(bg="#000000")
 
