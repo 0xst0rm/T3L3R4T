@@ -40,19 +40,19 @@ style.configure("TLabel", foreground="#00FF00", background="#000000", font=("Cou
 style.configure("TButton", foreground="#00FF00", background="#000000", font=("Courier", 12, "bold"))
 
 # Label and Entry for bot_id
-bot_id_label = ttk.Label(root, text="Enter bot_id:")
+bot_id_label = ttk.Label(root, text="Enter Telegram BOT token:")
 bot_id_label.pack(pady=10)
 bot_id_entry = ttk.Entry(root)
 bot_id_entry.pack(pady=5)
 
 # Label and Entry for chat_id
-chat_id_label = ttk.Label(root, text="Enter chat_id:")
+chat_id_label = ttk.Label(root, text="Enter Telegram Chat ID:")
 chat_id_label.pack(pady=10)
 chat_id_entry = ttk.Entry(root)
 chat_id_entry.pack(pady=5)
 
 # Label and Entry for db_token
-db_token_label = ttk.Label(root, text="Enter db_token:")
+db_token_label = ttk.Label(root, text="Enter DropBox token:")
 db_token_label.pack(pady=10)
 db_token_entry = ttk.Entry(root)
 db_token_entry.pack(pady=5)
